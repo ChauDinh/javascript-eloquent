@@ -1,0 +1,14 @@
+{
+  "name": "javascript-eloquent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chau Dinh <chaudvb95uc@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
