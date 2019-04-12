@@ -30,3 +30,31 @@ function normalize() {
 }
 
 normalize.call({ coords: [0, 2, 3], length: 5 });
+
+// Prototypes
+
+let empty = {};
+console.log(empty.toString);
+console.log(empty.toString());
+
+// Notes: besides a set of properties, most objects also have a prototype - just like another object that is used as a fallback source of properties. Particularly, when we request a property that does not have in an object, its prototype will be searched for the property, then the prototype's prototype, and so on.
+
+console.log(Object.getPrototypeOf({}) == Object.prototype);
+
+console.log(Object.getPrototypeOf(Object.prototype));
+
+console.log(Object.getPrototypeOf(Math.max) == Function.prototype); // Function derive on Function.prototype
+
+console.log(Object.getPrototypeOf([]) == Array.prototype); // Array derive on Array.prototype
+
+
+// We can use Object.create to create an object with a specific prototype as following: 
+let protoRabbit = {
+  speak(line) {
+    console.log(`The ${this.type} rabbit says ${line}`);
+  }
+};
+
+let killerRabbit = Object.create(protoRabbit);
+killerRabbit.type = "killer";
+killerRabbit.speak("SRKARERRC");
